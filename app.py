@@ -1,8 +1,8 @@
 # app.py
 # ==================================================================================================
 # INNOMATICS - AUTOMATED OMR EVALUATION WEB APP (Streamlit)
-# Author: Supreeth Mummalaneni (published by Supreeth)
-# Date: 2025-09-20 (Updated)
+# Author: Supreeth Theru (published by Supreeth)
+# Date: 2025-09-21 (Updated)
 #
 # Single-file Streamlit app implementing:
 # - Batch OMR uploads + camera capture
@@ -502,7 +502,6 @@ else:
     towrite = io.BytesIO()
     with pd.ExcelWriter(towrite, engine="xlsxwriter") as writer:
         audit_df.to_excel(writer, sheet_name="Audit", index=False)
-        writer.save()
     st.download_button("📥 Download Audit Excel", data=towrite.getvalue(), file_name=f"audit_log_{timestamp_now()}.xlsx", mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet")
 
     # Quick analytics
@@ -606,3 +605,4 @@ if st.sidebar.checkbox("Show developer notes / judges checklist", value=False):
     """)
 
 # EOF
+
