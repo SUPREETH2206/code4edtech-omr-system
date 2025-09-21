@@ -50,7 +50,7 @@ if not os.path.exists(WRITABLE_DB_PATH):
 
 # --- Database Connection ---
 @st.cache_resource
-def init_db(path=WRITABLE_DB_PATH):
+id INTEGER PRIMARY KEY AUTOINCREMENT, timestamp TEXT NOT NULL, filename TEXT, exam_set TEXT,
     conn = sqlite3.connect(path, check_same_thread=False)
     c = conn.cursor()
     c.execute('''
@@ -214,4 +214,5 @@ st.markdown("</div>", unsafe_allow_html=True)
 
 # --- Footer ---
 st.markdown("<div class='footer'>Published by Supreeth Theru | © 2025 All rights reserved</div>", unsafe_allow_html=True)
+
 
