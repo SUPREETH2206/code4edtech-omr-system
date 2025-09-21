@@ -50,12 +50,12 @@ if not os.path.exists(WRITABLE_DB_PATH):
 
 # --- Database Connection ---
 @st.cache_resource
-id INTEGER PRIMARY KEY AUTOINCREMENT, timestamp TEXT NOT NULL, filename TEXT, exam_set TEXT,
+def init_db(path=WRITABLE_DB_PATH):
     conn = sqlite3.connect(path, check_same_thread=False)
     c = conn.cursor()
     c.execute('''
         CREATE TABLE IF NOT EXISTS results (
-            id INTEGER PRIMARY KEY AUTOINCREMENT, timestamp TEXT NOT- NULL, filename TEXT, exam_set TEXT,
+            id INTEGER PRIMARY KEY AUTOINCREMENT, timestamp TEXT NOT NULL, filename TEXT, exam_set TEXT,
             total_score INTEGER, subj_python INTEGER, subj_eda INTEGER, subj_sql INTEGER,
             subj_powerbi INTEGER, subj_statistics INTEGER, ambiguous_questions INTEGER, flagged TEXT
         );
@@ -214,5 +214,6 @@ st.markdown("</div>", unsafe_allow_html=True)
 
 # --- Footer ---
 st.markdown("<div class='footer'>Published by Supreeth Theru | © 2025 All rights reserved</div>", unsafe_allow_html=True)
+
 
 
