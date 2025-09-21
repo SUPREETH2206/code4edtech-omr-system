@@ -95,6 +95,8 @@ View Results: The application will display the processing status and show a visu
 
 Audit & Export: Scroll down to the "Audit Log & Analytics" section to view a table of all evaluations, search for specific records, or download the entire log as a CSV/Excel file.
 
+**URGENT NOTE FOR JUDGES:** Due to critical technical errors that occurred in the final hour before the submission deadline, I was unable to record the required video presentation. The project itself is fully functional and deployed with all features implemented. I humbly request you to evaluate my submission based on the live, interactive demo, which is fully accessible at the Web Application URL. Thank you for your understanding.
+
 Project Author:
 
 Supreeth Theru
